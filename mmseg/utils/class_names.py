@@ -435,7 +435,8 @@ dataset_aliases = {
     'stare': ['stare', 'STARE'],
     'lip': ['LIP', 'lip'],
     'mapillary_v1': ['mapillary_v1'],
-    'mapillary_v2': ['mapillary_v2']
+    'mapillary_v2': ['mapillary_v2'],
+    'endovis2017': ['endovis2017']
 }
 
 
@@ -471,3 +472,19 @@ def get_palette(dataset):
     else:
         raise TypeError(f'dataset must a str, but got {type(dataset)}')
     return labels
+
+
+#mine
+def endovis2017_classes():
+    return [
+        'background', 'Bipolar_forceps', 'Prograsp-Forceps', 
+        'Large-Needle-Driver', 'Vessel-Sealer', 'Grasping-Retractor',
+        'traffic light', 'traffic sign', 'vegetation', 'terrain',
+        'Monopolar-Curved-Scissors', 'Other'
+    ]
+
+def endovis2017_palette():
+    return [
+        [0, 0, 0], [255, 0, 0], [0, 255, 0], [0, 0, 255],
+        [0, 255, 255], [255, 0, 255], [255, 255, 0], [0, 128, 255]
+    ]
