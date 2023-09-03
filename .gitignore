@@ -118,3 +118,6 @@ mmseg/.mim
 
 # Pytorch
 *.pth
+
+bin/
+wor_dirs_all_ious/

@@ -30,7 +30,8 @@ class BoundaryLoss(nn.Module):
         self.loss_weight = loss_weight
         self.loss_name_ = loss_name
 
-    def forward(self, bd_pre: Tensor, bd_gt: Tensor) -> Tensor:
+    def forward(self, bd_pre: Tensor, bd_gt: Tensor, weight: Tensor, ignore_index: Tensor) -> Tensor:
+    # def forward(self, bd_pre: Tensor, bd_gt: Tensor) -> Tensor:
         """Forward function.
         Args:
             bd_pre (Tensor): Predictions of the boundary head.
@@ -39,6 +40,11 @@ class BoundaryLoss(nn.Module):
         Returns:
             Tensor: Loss tensor.
         """
+        print(bd_pre.shape)
+        print(bd_gt.shape)
+        print(torch.unique(bd_pre))
+        print(torch.unique(bd_gt))
+        
         log_p = bd_pre.permute(0, 2, 3, 1).contiguous().view(1, -1)
         target_t = bd_gt.view(1, -1).float()
 

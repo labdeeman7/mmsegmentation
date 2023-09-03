@@ -1,6 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 from typing import List, Optional
-
+import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch import Tensor
@@ -172,7 +172,11 @@ class EncoderDecoder(BaseSegmentor):
         x = self.extract_feat(inputs)
 
         losses = dict()
-
+        # print('data_samples', data_samples)
+        # print('***************')
+        # print('data_sample gt_edge_map', data_samples[0].gt_edge_map.data.shape)
+        # print('data_sample gt_edge_map unique 0', torch.unique(data_samples[0].gt_edge_map.data))
+        # print('data_sample gt_edge_map unique 1', torch.unique(data_samples[1].gt_edge_map.data))
         loss_decode = self._decode_head_forward_train(x, data_samples)
         losses.update(loss_decode)
 

@@ -244,7 +244,7 @@ class BaseSegDataset(BaseDataset):
                     img_path=osp.join(img_dir, img_name + self.img_suffix))
                 if ann_dir is not None:
                     seg_map = img_name + self.seg_map_suffix
-                    data_info['seg_map_path'] = osp.join(ann_dir, seg_map)
+                    data_info['seg_map_path'] = osp.join(ann_dir, seg_map) 
                 data_info['label_map'] = self.label_map
                 data_info['reduce_zero_label'] = self.reduce_zero_label
                 data_info['seg_fields'] = []
@@ -264,5 +264,5 @@ class BaseSegDataset(BaseDataset):
                 data_info['reduce_zero_label'] = self.reduce_zero_label
                 data_info['seg_fields'] = []
                 data_list.append(data_info)
-            data_list = sorted(data_list, key=lambda x: x['img_path'])
+            data_list = sorted(data_list, key=lambda x: x['img_path']) 
         return data_list

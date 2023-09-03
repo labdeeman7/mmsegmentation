@@ -13,7 +13,6 @@ class Endovis2017RearrangedDataset(BaseSegDataset):
     METAINFO = dict(
         classes=('background', 'Bipolar_forceps', 'Prograsp-Forceps', 
                  'Large-Needle-Driver', 'Vessel-Sealer', 'Grasping-Retractor',
-                 'traffic light', 'traffic sign', 'vegetation', 'terrain',
                  'Monopolar-Curved-Scissors', 'Other'),
         palette=[[0, 0, 0], [255, 0, 0], [0, 255, 0], [0, 0, 255],
                  [0, 255, 255], [255, 0, 255], [255, 255, 0], [0, 128, 255]])
@@ -23,12 +22,6 @@ class Endovis2017RearrangedDataset(BaseSegDataset):
                  seg_map_suffix='.png',
                  **kwargs) -> None:
         super().__init__(
-            img_suffix=img_suffix, seg_map_suffix=seg_map_suffix, **kwargs)
-
-
-
-class Endovis2017Dataset(BaseSegDataset):
-    pass
-
-class Endovis2017GeneratedDataset(BaseSegDataset):
-    pass
+            img_suffix=img_suffix, 
+            seg_map_suffix=seg_map_suffix, 
+            **kwargs)

@@ -117,6 +117,11 @@ class SegDataPreProcessor(BaseDataPreprocessor):
         if self._enable_normalize:
             inputs = [(_input - self.mean) / self.std for _input in inputs]
 
+        # print(f'data_samples {data_samples}')    
+        # print(f'inputs {inputs}')
+        # print(f'data {data}')
+        # print(f"data_samples.get('gt_sem_seg') {data_samples.get('gt_sem_seg')}")
+
         if training:
             assert data_samples is not None, ('During training, ',
                                               '`data_samples` must be define.')

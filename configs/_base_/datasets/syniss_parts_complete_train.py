@@ -1,13 +1,13 @@
 # dataset settings
-dataset_type = 'Endovis2017RearrangedDataset'
-data_root = 'data/Endovis2017/endovis_2017_rearranged/'
+dataset_type = 'SynissPartsDataset'
+data_root = '/nfs/home/talabi/data/Endovis_challenges_2023/syniss/syniss_complete/' 
 
-img_scale = (960, 960)
-crop_size = (768, 768)
+img_scale = (540, 960)
+crop_size = (448, 896)
 
 train_pipeline = [
     dict(type='LoadImageFromFile'),
-    dict(type='LoadAnnotations', reduce_zero_label=True),
+    dict(type='LoadAnnotations'),
     dict(
         type='RandomResize',
         scale=img_scale,
@@ -23,10 +23,11 @@ test_pipeline = [
     dict(type='Resize', scale=img_scale, keep_ratio=True),
     # add loading annotation after ``Resize`` because ground truth
     # does not need to do resize data transform
-    dict(type='LoadAnnotations', reduce_zero_label=True),
+    dict(type='LoadAnnotations'),
     dict(type='PackSegInputs')
 ]
 img_ratios = [0.5, 0.75, 1.0, 1.25, 1.5, 1.75]
+
 tta_pipeline = [
     dict(type='LoadImageFromFile', backend_args=None),
     dict(
@@ -42,6 +43,7 @@ tta_pipeline = [
             ], [dict(type='LoadAnnotations')], [dict(type='PackSegInputs')]
         ])
 ]
+
 train_dataloader = dict(
     batch_size=4,
     num_workers=4,
@@ -51,8 +53,11 @@ train_dataloader = dict(
         type=dataset_type,
         data_root=data_root,
         data_prefix=dict(
-            img_path='img_dir/train', seg_map_path='ann_dir/train'),
+            img_path='img_dir/train', seg_map_path='parts_ann_dir/train'),
+        img_suffix='.png',
+        seg_map_suffix='.png',    
         pipeline=train_pipeline))
+
 val_dataloader = dict(
     batch_size=1,
     num_workers=4,
@@ -62,9 +67,12 @@ val_dataloader = dict(
         type=dataset_type,
         data_root=data_root,
         data_prefix=dict(
-            img_path='img_dir/val', seg_map_path='ann_dir/val'),
+            img_path='img_dir/train', seg_map_path='parts_ann_dir/train'),
+        img_suffix='.png',
+        seg_map_suffix='.png',    
         pipeline=test_pipeline))
+
 test_dataloader = val_dataloader
 
-val_evaluator = dict(type='IoUMetric', iou_metrics=['mIoU', 'mDice'])
+val_evaluator = dict(type='IoUMetric', iou_metrics=['mIoU'])
 test_evaluator = val_evaluator

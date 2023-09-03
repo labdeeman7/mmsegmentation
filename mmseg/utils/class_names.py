@@ -479,7 +479,6 @@ def endovis2017_classes():
     return [
         'background', 'Bipolar_forceps', 'Prograsp-Forceps', 
         'Large-Needle-Driver', 'Vessel-Sealer', 'Grasping-Retractor',
-        'traffic light', 'traffic sign', 'vegetation', 'terrain',
         'Monopolar-Curved-Scissors', 'Other'
     ]
 
@@ -487,4 +486,46 @@ def endovis2017_palette():
     return [
         [0, 0, 0], [255, 0, 0], [0, 255, 0], [0, 0, 255],
         [0, 255, 255], [255, 0, 255], [255, 255, 0], [0, 128, 255]
+    ]
+
+
+def autolaparo_classes():
+    return [
+        'background', 'tool1', 'tool2', 'tool3', 'tool4', 'uterus'
+    ]
+
+def autolaparo_palette():
+    return [
+        [0, 0, 0], [255, 0, 0], [0, 255, 0], [0, 0, 255],
+        [0, 255, 255], [255, 0, 255]
+    ]
+
+def robustmis_classes():
+    return [
+        'background', 'instrument'
+    ]
+
+def robustmis_palette():
+    return [
+        [0, 0, 0], [255, 0, 0]
+    ]
+
+def syniss_binary_classes():
+    return [
+        'background', 'instrument'
+    ]
+
+def syniss_binary_palette():
+    return [
+        [0, 0, 0], [255, 0, 0]
+    ]
+
+def syniss_parts_classes():
+    return [
+        'background', 'shaft', 'wrist', 'jaw'
+    ]
+
+def syniss_parts_palette():
+    return [
+        [0, 0, 0], [255,214,0], [138,0,0], [49,205,49]
     ]

@@ -22,6 +22,10 @@ from .refuge import REFUGEDataset
 from .stare import STAREDataset
 from .synapse import SynapseDataset
 from .endovis_2017 import Endovis2017RearrangedDataset
+from .autolaparo import AutolaparoDataset
+from .robustmis import RobustmisDataset
+from .syniss_binary import SynissBinaryDataset
+from .syniss_parts import SynissPartsDataset
 # yapf: disable
 from .transforms import (CLAHE, AdjustGamma, BioMedical3DPad,
                          BioMedical3DRandomCrop, BioMedical3DRandomFlip,
