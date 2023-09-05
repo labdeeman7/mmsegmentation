@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/fcn_unet_s5-d16.py',
-    '../_base_/datasets/syniss_parts_complete.py', 
+    '../_base_/datasets/syniss_parts_rem_wrong_labels.py', 
     '../_base_/default_runtime.py',
     '../_base_/schedules/schedule_40k.py'
 ]
@@ -16,7 +16,6 @@ model = dict(data_preprocessor=data_preprocessor,
         train_cfg=dict(),
         test_cfg=dict(mode='slide', crop_size=(256, 256), stride=(170, 170)))
         
-train_cfg = dict(type='IterBasedTrainLoop', max_iters=20000, val_interval=100)
 
 default_hooks = dict(
     timer=dict(type='IterTimerHook'),

@@ -18,7 +18,7 @@ pip install -e .
 echo "training unet synisspart ..."
 
 
-#syniss complete with ce and hausdorff loss
-python train_model.py '/nfs/home/talabi/repositories/mmsegmentation/configs/unet/unet-s5-d16_fcn_4xb4-80k_synisspartscompleteCEHausdorff-448x896.py' 
+#syniss complete with ce ohem wce, aug long dataset
+python train_model.py '/nfs/home/talabi/repositories/mmsegmentation/configs/unet/unet-s5-d16_fcn_4xb4-80k_synisspartscompleteWCEOHEMAugLong-448x896.py' 
 
-echo "completed training unet synisspartcomplete syniss ce hausdorff complete. ..."
+echo "completed training unet synisspartcomplete syniss ce ohem wce, aug dataset long  ..."

@@ -33,4 +33,4 @@ runai submit train-unet-synissparts-ce-hausdorff-loss \
   -v /nfs:/nfs \
   --backoff-limit 0 \
   --large-shm \
-  --command -- bash /nfs/home/talabi/repositories/mmsegmentation/scripts/synissparts/train_unet_synisspartscompletecehausdorffloss.sh
+  --command -- bash /nfs/home/talabi/repositories/mmsegmentation/scripts/synisspartsunet/train_unet_synisspartscompletecehausdorffloss.sh

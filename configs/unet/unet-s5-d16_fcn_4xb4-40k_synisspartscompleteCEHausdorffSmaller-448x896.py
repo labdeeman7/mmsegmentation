@@ -8,7 +8,10 @@ _base_ = [
 crop_size = (448, 896)
 data_preprocessor = dict(size=crop_size)
 model = dict(data_preprocessor=data_preprocessor,
-        decode_head=dict(num_classes=4),
+        decode_head=dict(num_classes=4,
+                         loss_decode=[
+                             dict(type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0),
+                             dict(type='HuasdorffDisstanceLoss', loss_weight=0.00002)]),
         auxiliary_head=dict(num_classes=4),
         train_cfg=dict(),
         test_cfg=dict(mode='slide', crop_size=(256, 256), stride=(170, 170)))

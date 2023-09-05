@@ -13,6 +13,7 @@ class ConfMatrix(object): #😉 Confusion matrix I assume
         self.mat = None #🙋‍♂️ What is mat? I guess the matrix. It should be a num_class x num_class matrix.
         self.ious = torch.zeros((0,num_classes), device=device)
         self.dices = torch.zeros((0,num_classes), device=device)
+        self.filenames = []
         
 
     def get_acc_iou_dice(self, mat):   
@@ -22,7 +23,10 @@ class ConfMatrix(object): #😉 Confusion matrix I assume
         dice = (2* torch.diag(h))/ (h.sum(1) + h.sum(0) ) #😉 dice is 2*tp / 2*tp +fp +fn for each class.  
         return acc, iou, dice       
 
-    def update(self, pred, target): #😉 The input is a flattened array with the labels.
+    def update(self, pred, target, file_name): #😉 The input is a flattened array with the labels.
+
+        self.filenames.append(file_name)
+
         target =  torch.Tensor(target.flatten())
         if len(pred.shape) == 4:
             pred = torch.Tensor(pred.argmax(1).flatten())
@@ -57,6 +61,7 @@ class ConfMatrix(object): #😉 Confusion matrix I assume
         dice_no_nan = np.array([x.item() for x in dice if str(x.item()) != "nan"])  
         
         metrics = {
+            "filenames": self.filenames,
             "mIoU": np.mean(iu_no_nan),
             "dice_avg": np.mean(dice_no_nan), 
             "iou": iou.cpu().numpy() ,
@@ -111,7 +116,7 @@ if __name__ == '__main__':
         y_true = cv2.imread(true_file_path, 0).astype(np.uint8)
         y_pred = cv2.imread(pred_file_path, 0).astype(np.uint8)
         
-        conf_mat_val.update(torch.from_numpy(y_pred) , torch.from_numpy(y_true) )
+        conf_mat_val.update(torch.from_numpy(y_pred) , torch.from_numpy(y_true), file_name)
 
     metrics = conf_mat_val.get_metrics()
     mIoU = metrics["mIoU"]
@@ -119,11 +124,16 @@ if __name__ == '__main__':
     acc = metrics["acc"]
     iu = metrics["iou"]
     dice = metrics["dice"]
+    filenames = metrics["filenames"]
 
+    filenames = np.array(filenames)
     all_ious = metrics["all_ious"]
+
+    filenames_with_all_ious = np.hstack((np.expand_dims(filenames, axis=1), all_ious))
+
     exp_name = args.pred_path.split('/')[-2] + '.npy'
     save_ious_path = os.path.join( args.save_ious_path, exp_name)
-    np.save(save_ious_path, all_ious)
+    np.save(save_ious_path, filenames_with_all_ious)
 
     for c, class_name in enumerate(class_name_list):
         print(f'Instrument Class: {class_name} IoU={iu[c]}, dice={dice[c]}')

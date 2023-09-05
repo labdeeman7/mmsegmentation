@@ -1,4 +1,4 @@
-runai submit syniss-get-metrics \
+runai submit syniss-get-metrics-unet \
   -i aicregistry:5000/talabi_post_process:latest \
   --gpu 1 \
   --run-as-user \

@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/models/fcn_unet_s5-d16.py',
-    '../_base_/datasets/syniss_parts_complete.py', 
+    '../_base_/datasets/syniss_parts_augmented.py', 
     '../_base_/default_runtime.py',
     '../_base_/schedules/schedule_40k.py'
 ]
@@ -9,10 +9,13 @@ crop_size = (448, 896)
 data_preprocessor = dict(size=crop_size)
 model = dict(data_preprocessor=data_preprocessor,
         decode_head=dict(num_classes=4,
-                         decode_head=dict(loss_decode=[
-                                        dict(type='CrossEntropyLoss', loss_name='loss_ce', loss_weight=1.0),
-                                        dict(type='DiceLoss', loss_name='loss_dice', loss_weight=3.0)
-                                    ])),
+                         sampler=dict(type='OHEMPixelSampler', thresh=0.8),
+                         loss_decode=dict(
+                         type='CrossEntropyLoss',
+                         use_sigmoid=False, 
+                         loss_weight=1.0,
+                         class_weight=[0.8, 1.1, 1.5, 1.8])
+                         ),
         auxiliary_head=dict(num_classes=4),
         train_cfg=dict(),
         test_cfg=dict(mode='slide', crop_size=(256, 256), stride=(170, 170)))

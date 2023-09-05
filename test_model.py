@@ -62,11 +62,9 @@ def trigger_visualization_hook(cfg, args):
     default_hooks = cfg.default_hooks
     if 'visualization' in default_hooks:
         visualization_hook = default_hooks['visualization']
-        logger_hook = default_hooks['logger']
         # Turn on visualization
         visualization_hook['draw'] = True
         visualization_hook['interval'] = 1
-        logger_hook['interval'] = 1
         if args.show:
             visualization_hook['show'] = True
             visualization_hook['wait_time'] = args.wait_time
