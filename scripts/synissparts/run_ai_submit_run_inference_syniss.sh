@@ -16,7 +16,7 @@
 #   --large-shm \
 #   --command -- bash /nfs/home/talabi/repositories/mmsegmentation/scripts/get_inference_syniss.sh
 
-runai submit run-inference-syniss-parts-unet \
+runai submit run-inference-syniss \
   -i aicregistry:5000/talabi_mmseg:latest \
   --gpu 1 \
   -p talabi \

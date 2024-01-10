@@ -54,13 +54,27 @@ echo "evaluating model ..."
 #         --out 'work_dirs/unet-s5-d16_fcn_4xb4-40k_synisspartscompleteWCEOHEM-448x896/pred_labels/' \
 #         --show-dir 'work_dirs/unet-s5-d16_fcn_4xb4-40k_synisspartscompleteWCEOHEM-448x896/vis_preds/'
 
-python test_model.py 'configs/unet/unet-s5-d16_fcn_4xb4-80k_synisspartscompleteWCEOHEMAugLong-448x896.py' \
-        'work_dirs/unet-s5-d16_fcn_4xb4-80k_synisspartscompleteWCEOHEMAugLong-448x896/iter_40000.pth' \
-        --work-dir 'work_dirs/unet-s5-d16_fcn_4xb4-80k_synisspartscompleteWCEOHEMAugLong-448x896' \
-        --out 'work_dirs/unet-s5-d16_fcn_4xb4-80k_synisspartscompleteWCEOHEMAugLong-448x896/pred_labels/' \
-        --show-dir 'work_dirs/unet-s5-d16_fcn_4xb4-80k_synisspartscompleteWCEOHEMAugLong-448x896/vis_preds/'
+# python test_model.py 'configs/unet/unet-s5-d16_fcn_4xb4-80k_synisspartscompleteWCEOHEMAugLong-448x896.py' \
+#         'work_dirs/unet-s5-d16_fcn_4xb4-80k_synisspartscompleteWCEOHEMAugLong-448x896/iter_40000.pth' \
+#         --work-dir 'work_dirs/unet-s5-d16_fcn_4xb4-80k_synisspartscompleteWCEOHEMAugLong-448x896' \
+#         --out 'work_dirs/unet-s5-d16_fcn_4xb4-80k_synisspartscompleteWCEOHEMAugLong-448x896/pred_labels/' \
+#         --show-dir 'work_dirs/unet-s5-d16_fcn_4xb4-80k_synisspartscompleteWCEOHEMAugLong-448x896/vis_preds/'
 
-echo "completed evaluating on ce ohem wce aug long complete..."
+# echo "completed evaluating on ce ohem wce aug long complete..."
+
+#config is constant, checkpoint, change workdir, change out, change showdir
+
+##################### BINARY ##########################
+
+#train-unet-synissbinary-augmented-one
+
+python test_model.py 'configs/unet/unet-s5-d16_fcn_4xb4-80k_synissbinaryonlytrain-448x896.py' \
+        'work_dirs/unet-s5-d16_fcn_4xb4-80k_synissbinaryaugmented1-448x896/iter_48000.pth' \
+        --work-dir 'work_dirs/unet-s5-d16_fcn_4xb4-80k_synissbinaryaugmented1-448x896' \
+        --out 'work_dirs/unet-s5-d16_fcn_4xb4-80k_synissbinaryaugmented1-448x896/pred_labels/' \
+        --show-dir 'work_dirs/unet-s5-d16_fcn_4xb4-80k_synissbinaryaugmented1-448x896/vis_preds/'
+
+echo "completed evaluating on train-unet-synissbinary-augmented-one..."
 
          
 
