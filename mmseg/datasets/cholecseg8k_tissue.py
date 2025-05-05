@@ -4,8 +4,8 @@ from .basesegdataset import BaseSegDataset
 
 
 @DATASETS.register_module() #decorator as a plugin registrar.
-class SynissBinaryDataset(BaseSegDataset):
-    """SynissBinaryDataset dataset.
+class CholecSeg8kBinaryDataset(BaseSegDataset):
+    """CholecSeg8kBinaryDataset dataset.
 
     The ``img_suffix`` is fixed to '_leftImg8bit.png' and ``seg_map_suffix`` is
     fixed to '_gtFine_labelTrainIds.png' for Cityscapes dataset.

@@ -26,6 +26,7 @@ from .autolaparo import AutolaparoDataset
 from .robustmis import RobustmisDataset
 from .syniss_binary import SynissBinaryDataset
 from .syniss_parts import SynissPartsDataset
+from .cholecseg8k_binary import CholecSeg8kBinaryDataset
 # yapf: disable
 from .transforms import (CLAHE, AdjustGamma, BioMedical3DPad,
                          BioMedical3DRandomCrop, BioMedical3DRandomFlip,

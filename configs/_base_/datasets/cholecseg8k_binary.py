@@ -1,6 +1,6 @@
 # dataset settings
-dataset_type = 'SynissBinaryDataset'
-data_root = '/nfs/home/talabi/data/Endovis_challenges_2023/syniss/syniss_only_train/' 
+dataset_type = 'CholecSeg8kBinaryDataset'
+data_root = '/nfs/home/talabi/data/cholecseg8k/cholecseg8k_binary_train_val/' 
 
 img_scale = (540, 960)
 crop_size = (448, 896)
@@ -53,7 +53,7 @@ train_dataloader = dict(
         type=dataset_type,
         data_root=data_root,
         data_prefix=dict(
-            img_path='img_dir/train', seg_map_path='binary_ann_dir/train'),
+            img_path='img_dir/train', seg_map_path='ann_dir/train'),
         img_suffix='.png',
         seg_map_suffix='.png',    
         pipeline=train_pipeline))
@@ -68,7 +68,7 @@ val_dataloader = dict(
         type=dataset_type,
         data_root=data_root,
         data_prefix=dict(
-            img_path='img_dir/train', seg_map_path='binary_ann_dir/train'),
+            img_path='img_dir/train', seg_map_path='ann_dir/train'),
         img_suffix='.png',
         seg_map_suffix='.png',    
         pipeline=test_pipeline))
