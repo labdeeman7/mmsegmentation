@@ -4,15 +4,17 @@ from .basesegdataset import BaseSegDataset
 
 
 @DATASETS.register_module() #decorator as a plugin registrar.
-class CholecSeg8kBinaryDataset(BaseSegDataset):
-    """CholecSeg8kBinaryDataset dataset.
+class CholecSeg8kTissueDataset(BaseSegDataset):
+    """CholecSeg8kTissueDataset dataset.
 
     The ``img_suffix`` is fixed to '_leftImg8bit.png' and ``seg_map_suffix`` is
     fixed to '_gtFine_labelTrainIds.png' for Cityscapes dataset.
     """
     METAINFO = dict(
-        classes=('background', 'instrument'),
-        palette=[[0, 0, 0], [255, 0, 0]])
+        classes=('background', 'abdominal_wall', 'liver', 'gastrointestinal_tract', 'fat', 'connective_tissue', 
+                 'blood', 'cystic_duct', 'gallbladder', 'hepatic_vein', 'liver_ligament'),
+        palette=[[0, 0, 0], [128, 0, 0], [0, 128, 0], [0, 0, 128], [128, 128, 0], [128, 0, 128],
+                 [0, 128, 128], [255, 255, 0], [255, 0, 255], [0, 255, 255], [100, 100, 100]])
 
     def __init__(self,
                  img_suffix='.png',

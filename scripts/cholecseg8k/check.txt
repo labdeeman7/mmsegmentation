@@ -1,0 +1,525 @@
+started ...
+Looking in indexes: https://pypi.org/simple, https://download.pytorch.org/whl/cu113
+Requirement already satisfied: torch==1.12.0 in ./mmseg/lib/python3.7/site-packages (1.12.0+cu113)
+Requirement already satisfied: torchvision in ./mmseg/lib/python3.7/site-packages (0.13.0+cu113)
+Requirement already satisfied: typing-extensions in ./mmseg/lib/python3.7/site-packages (from torch==1.12.0) (4.6.3)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in ./mmseg/lib/python3.7/site-packages (from torchvision) (9.5.0)
+Requirement already satisfied: requests in ./mmseg/lib/python3.7/site-packages (from torchvision) (2.31.0)
+Requirement already satisfied: numpy in ./mmseg/lib/python3.7/site-packages (from torchvision) (1.21.6)
+Requirement already satisfied: idna<4,>=2.5 in ./mmseg/lib/python3.7/site-packages (from requests->torchvision) (3.4)
+Requirement already satisfied: certifi>=2017.4.17 in ./mmseg/lib/python3.7/site-packages (from requests->torchvision) (2023.5.7)
+Requirement already satisfied: charset-normalizer<4,>=2 in ./mmseg/lib/python3.7/site-packages (from requests->torchvision) (3.1.0)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./mmseg/lib/python3.7/site-packages (from requests->torchvision) (2.0.2)
+WARNING: You are using pip version 22.0.4; however, version 24.0 is available.
+You should consider upgrading via the '/nfs/home/talabi/repositories/mmsegmentation/mmseg/bin/python -m pip install --upgrade pip' command.
+Requirement already satisfied: openmim in ./mmseg/lib/python3.7/site-packages (0.3.7)
+Requirement already satisfied: model-index in ./mmseg/lib/python3.7/site-packages (from openmim) (0.1.11)
+Requirement already satisfied: requests in ./mmseg/lib/python3.7/site-packages (from openmim) (2.31.0)
+Requirement already satisfied: rich in ./mmseg/lib/python3.7/site-packages (from openmim) (13.4.1)
+Requirement already satisfied: pip>=19.3 in ./mmseg/lib/python3.7/site-packages (from openmim) (22.0.4)
+Requirement already satisfied: tabulate in ./mmseg/lib/python3.7/site-packages (from openmim) (0.9.0)
+Requirement already satisfied: pandas in ./mmseg/lib/python3.7/site-packages (from openmim) (1.3.5)
+Requirement already satisfied: colorama in ./mmseg/lib/python3.7/site-packages (from openmim) (0.4.6)
+Requirement already satisfied: Click in ./mmseg/lib/python3.7/site-packages (from openmim) (8.1.3)
+Requirement already satisfied: importlib-metadata in ./mmseg/lib/python3.7/site-packages (from Click->openmim) (6.6.0)
+Requirement already satisfied: ordered-set in ./mmseg/lib/python3.7/site-packages (from model-index->openmim) (4.1.0)
+Requirement already satisfied: markdown in ./mmseg/lib/python3.7/site-packages (from model-index->openmim) (3.4.3)
+Requirement already satisfied: pyyaml in ./mmseg/lib/python3.7/site-packages (from model-index->openmim) (6.0)
+Requirement already satisfied: pytz>=2017.3 in ./mmseg/lib/python3.7/site-packages (from pandas->openmim) (2023.3)
+Requirement already satisfied: python-dateutil>=2.7.3 in ./mmseg/lib/python3.7/site-packages (from pandas->openmim) (2.8.2)
+Requirement already satisfied: numpy>=1.17.3 in ./mmseg/lib/python3.7/site-packages (from pandas->openmim) (1.21.6)
+Requirement already satisfied: charset-normalizer<4,>=2 in ./mmseg/lib/python3.7/site-packages (from requests->openmim) (3.1.0)
+Requirement already satisfied: certifi>=2017.4.17 in ./mmseg/lib/python3.7/site-packages (from requests->openmim) (2023.5.7)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./mmseg/lib/python3.7/site-packages (from requests->openmim) (2.0.2)
+Requirement already satisfied: idna<4,>=2.5 in ./mmseg/lib/python3.7/site-packages (from requests->openmim) (3.4)
+Requirement already satisfied: markdown-it-py<3.0.0,>=2.2.0 in ./mmseg/lib/python3.7/site-packages (from rich->openmim) (2.2.0)
+Requirement already satisfied: typing-extensions<5.0,>=4.0.0 in ./mmseg/lib/python3.7/site-packages (from rich->openmim) (4.6.3)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in ./mmseg/lib/python3.7/site-packages (from rich->openmim) (2.15.1)
+Requirement already satisfied: mdurl~=0.1 in ./mmseg/lib/python3.7/site-packages (from markdown-it-py<3.0.0,>=2.2.0->rich->openmim) (0.1.2)
+Requirement already satisfied: six>=1.5 in ./mmseg/lib/python3.7/site-packages (from python-dateutil>=2.7.3->pandas->openmim) (1.16.0)
+Requirement already satisfied: zipp>=0.5 in ./mmseg/lib/python3.7/site-packages (from importlib-metadata->Click->openmim) (3.15.0)
+WARNING: You are using pip version 22.0.4; however, version 24.0 is available.
+You should consider upgrading via the '/nfs/home/talabi/repositories/mmsegmentation/mmseg/bin/python -m pip install --upgrade pip' command.
+Looking in links: https://download.openmmlab.com/mmcv/dist/cu113/torch1.12.0/index.html
+Requirement already satisfied: mmcv in ./mmseg/lib/python3.7/site-packages (2.0.0)
+Requirement already satisfied: mmengine>=0.2.0 in ./mmseg/lib/python3.7/site-packages (from mmcv) (0.7.4)
+Requirement already satisfied: pyyaml in ./mmseg/lib/python3.7/site-packages (from mmcv) (6.0)
+Requirement already satisfied: addict in ./mmseg/lib/python3.7/site-packages (from mmcv) (2.4.0)
+Requirement already satisfied: Pillow in ./mmseg/lib/python3.7/site-packages (from mmcv) (9.5.0)
+Requirement already satisfied: packaging in ./mmseg/lib/python3.7/site-packages (from mmcv) (23.1)
+Requirement already satisfied: opencv-python>=3 in ./mmseg/lib/python3.7/site-packages (from mmcv) (4.7.0.72)
+Requirement already satisfied: yapf in ./mmseg/lib/python3.7/site-packages (from mmcv) (0.33.0)
+Requirement already satisfied: numpy in ./mmseg/lib/python3.7/site-packages (from mmcv) (1.21.6)
+Requirement already satisfied: termcolor in ./mmseg/lib/python3.7/site-packages (from mmengine>=0.2.0->mmcv) (2.3.0)
+Requirement already satisfied: rich in ./mmseg/lib/python3.7/site-packages (from mmengine>=0.2.0->mmcv) (13.4.1)
+Requirement already satisfied: matplotlib in ./mmseg/lib/python3.7/site-packages (from mmengine>=0.2.0->mmcv) (3.5.3)
+Requirement already satisfied: tomli>=2.0.1 in ./mmseg/lib/python3.7/site-packages (from yapf->mmcv) (2.0.1)
+Requirement already satisfied: cycler>=0.10 in ./mmseg/lib/python3.7/site-packages (from matplotlib->mmengine>=0.2.0->mmcv) (0.11.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in ./mmseg/lib/python3.7/site-packages (from matplotlib->mmengine>=0.2.0->mmcv) (1.4.4)
+Requirement already satisfied: pyparsing>=2.2.1 in ./mmseg/lib/python3.7/site-packages (from matplotlib->mmengine>=0.2.0->mmcv) (3.0.9)
+Requirement already satisfied: fonttools>=4.22.0 in ./mmseg/lib/python3.7/site-packages (from matplotlib->mmengine>=0.2.0->mmcv) (4.38.0)
+Requirement already satisfied: python-dateutil>=2.7 in ./mmseg/lib/python3.7/site-packages (from matplotlib->mmengine>=0.2.0->mmcv) (2.8.2)
+Requirement already satisfied: markdown-it-py<3.0.0,>=2.2.0 in ./mmseg/lib/python3.7/site-packages (from rich->mmengine>=0.2.0->mmcv) (2.2.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in ./mmseg/lib/python3.7/site-packages (from rich->mmengine>=0.2.0->mmcv) (2.15.1)
+Requirement already satisfied: typing-extensions<5.0,>=4.0.0 in ./mmseg/lib/python3.7/site-packages (from rich->mmengine>=0.2.0->mmcv) (4.6.3)
+Requirement already satisfied: mdurl~=0.1 in ./mmseg/lib/python3.7/site-packages (from markdown-it-py<3.0.0,>=2.2.0->rich->mmengine>=0.2.0->mmcv) (0.1.2)
+Requirement already satisfied: six>=1.5 in ./mmseg/lib/python3.7/site-packages (from python-dateutil>=2.7->matplotlib->mmengine>=0.2.0->mmcv) (1.16.0)
+WARNING: You are using pip version 22.0.4; however, version 24.0 is available.
+You should consider upgrading via the '/nfs/home/talabi/repositories/mmsegmentation/mmseg/bin/python -m pip install --upgrade pip' command.
+Requirement already satisfied: mmengine in ./mmseg/lib/python3.7/site-packages (0.7.4)
+Requirement already satisfied: yapf in ./mmseg/lib/python3.7/site-packages (from mmengine) (0.33.0)
+Requirement already satisfied: matplotlib in ./mmseg/lib/python3.7/site-packages (from mmengine) (3.5.3)
+Requirement already satisfied: termcolor in ./mmseg/lib/python3.7/site-packages (from mmengine) (2.3.0)
+Requirement already satisfied: numpy in ./mmseg/lib/python3.7/site-packages (from mmengine) (1.21.6)
+Requirement already satisfied: rich in ./mmseg/lib/python3.7/site-packages (from mmengine) (13.4.1)
+Requirement already satisfied: opencv-python>=3 in ./mmseg/lib/python3.7/site-packages (from mmengine) (4.7.0.72)
+Requirement already satisfied: addict in ./mmseg/lib/python3.7/site-packages (from mmengine) (2.4.0)
+Requirement already satisfied: pyyaml in ./mmseg/lib/python3.7/site-packages (from mmengine) (6.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in ./mmseg/lib/python3.7/site-packages (from matplotlib->mmengine) (1.4.4)
+Requirement already satisfied: cycler>=0.10 in ./mmseg/lib/python3.7/site-packages (from matplotlib->mmengine) (0.11.0)
+Requirement already satisfied: pyparsing>=2.2.1 in ./mmseg/lib/python3.7/site-packages (from matplotlib->mmengine) (3.0.9)
+Requirement already satisfied: pillow>=6.2.0 in ./mmseg/lib/python3.7/site-packages (from matplotlib->mmengine) (9.5.0)
+Requirement already satisfied: fonttools>=4.22.0 in ./mmseg/lib/python3.7/site-packages (from matplotlib->mmengine) (4.38.0)
+Requirement already satisfied: packaging>=20.0 in ./mmseg/lib/python3.7/site-packages (from matplotlib->mmengine) (23.1)
+Requirement already satisfied: python-dateutil>=2.7 in ./mmseg/lib/python3.7/site-packages (from matplotlib->mmengine) (2.8.2)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in ./mmseg/lib/python3.7/site-packages (from rich->mmengine) (2.15.1)
+Requirement already satisfied: markdown-it-py<3.0.0,>=2.2.0 in ./mmseg/lib/python3.7/site-packages (from rich->mmengine) (2.2.0)
+Requirement already satisfied: typing-extensions<5.0,>=4.0.0 in ./mmseg/lib/python3.7/site-packages (from rich->mmengine) (4.6.3)
+Requirement already satisfied: tomli>=2.0.1 in ./mmseg/lib/python3.7/site-packages (from yapf->mmengine) (2.0.1)
+Requirement already satisfied: mdurl~=0.1 in ./mmseg/lib/python3.7/site-packages (from markdown-it-py<3.0.0,>=2.2.0->rich->mmengine) (0.1.2)
+Requirement already satisfied: six>=1.5 in ./mmseg/lib/python3.7/site-packages (from python-dateutil>=2.7->matplotlib->mmengine) (1.16.0)
+WARNING: You are using pip version 22.0.4; however, version 24.0 is available.
+You should consider upgrading via the '/nfs/home/talabi/repositories/mmsegmentation/mmseg/bin/python -m pip install --upgrade pip' command.
+Obtaining file:///nfs/home/talabi/repositories/mmsegmentation
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: matplotlib in ./mmseg/lib/python3.7/site-packages (from mmsegmentation==1.0.0) (3.5.3)
+Requirement already satisfied: numpy in ./mmseg/lib/python3.7/site-packages (from mmsegmentation==1.0.0) (1.21.6)
+Requirement already satisfied: packaging in ./mmseg/lib/python3.7/site-packages (from mmsegmentation==1.0.0) (23.1)
+Requirement already satisfied: prettytable in ./mmseg/lib/python3.7/site-packages (from mmsegmentation==1.0.0) (3.7.0)
+Requirement already satisfied: scipy in ./mmseg/lib/python3.7/site-packages (from mmsegmentation==1.0.0) (1.7.3)
+Requirement already satisfied: fonttools>=4.22.0 in ./mmseg/lib/python3.7/site-packages (from matplotlib->mmsegmentation==1.0.0) (4.38.0)
+Requirement already satisfied: cycler>=0.10 in ./mmseg/lib/python3.7/site-packages (from matplotlib->mmsegmentation==1.0.0) (0.11.0)
+Requirement already satisfied: pyparsing>=2.2.1 in ./mmseg/lib/python3.7/site-packages (from matplotlib->mmsegmentation==1.0.0) (3.0.9)
+Requirement already satisfied: pillow>=6.2.0 in ./mmseg/lib/python3.7/site-packages (from matplotlib->mmsegmentation==1.0.0) (9.5.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in ./mmseg/lib/python3.7/site-packages (from matplotlib->mmsegmentation==1.0.0) (1.4.4)
+Requirement already satisfied: python-dateutil>=2.7 in ./mmseg/lib/python3.7/site-packages (from matplotlib->mmsegmentation==1.0.0) (2.8.2)
+Requirement already satisfied: wcwidth in ./mmseg/lib/python3.7/site-packages (from prettytable->mmsegmentation==1.0.0) (0.2.6)
+Requirement already satisfied: importlib-metadata in ./mmseg/lib/python3.7/site-packages (from prettytable->mmsegmentation==1.0.0) (6.6.0)
+Requirement already satisfied: typing-extensions in ./mmseg/lib/python3.7/site-packages (from kiwisolver>=1.0.1->matplotlib->mmsegmentation==1.0.0) (4.6.3)
+Requirement already satisfied: six>=1.5 in ./mmseg/lib/python3.7/site-packages (from python-dateutil>=2.7->matplotlib->mmsegmentation==1.0.0) (1.16.0)
+Requirement already satisfied: zipp>=0.5 in ./mmseg/lib/python3.7/site-packages (from importlib-metadata->prettytable->mmsegmentation==1.0.0) (3.15.0)
+Installing collected packages: mmsegmentation
+  Attempting uninstall: mmsegmentation
+    Found existing installation: mmsegmentation 1.0.0
+    Uninstalling mmsegmentation-1.0.0:
+      Successfully uninstalled mmsegmentation-1.0.0
+  Running setup.py develop for mmsegmentation
+Successfully installed mmsegmentation-1.0.0
+WARNING: You are using pip version 22.0.4; however, version 24.0 is available.
+You should consider upgrading via the '/nfs/home/talabi/repositories/mmsegmentation/mmseg/bin/python -m pip install --upgrade pip' command.
+training unet ...
+05/07 12:22:12 - mmengine - INFO - 
+------------------------------------------------------------
+System environment:
+    sys.platform: linux
+    Python: 3.7.13 (default, Mar 29 2022, 02:18:16) [GCC 7.5.0]
+    CUDA available: True
+    numpy_random_seed: 1458103367
+    GPU 0: Tesla V100-SXM2-32GB
+    CUDA_HOME: /usr/local/cuda
+    NVCC: Cuda compilation tools, release 11.3, V11.3.109
+    GCC: gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
+    PyTorch: 1.12.0+cu113
+    PyTorch compiling details: PyTorch built with:
+  - GCC 9.3
+  - C++ Version: 201402
+  - Intel(R) Math Kernel Library Version 2020.0.0 Product Build 20191122 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v2.6.0 (Git Hash 52b5f107dd9cf10910aaa19cb47f3abf9b349815)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - LAPACK is enabled (usually provided by MKL)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 11.3
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86
+  - CuDNN 8.3.2  (built against CUDA 11.5)
+  - Magma 2.5.2
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=11.3, CUDNN_VERSION=8.3.2, CXX_COMPILER=/opt/rh/devtoolset-9/root/usr/bin/c++, CXX_FLAGS= -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -DEDGE_PROFILER_USE_KINETO -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-unused-parameter -Wno-unused-function -Wno-unused-result -Wno-unused-local-typedefs -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Werror=cast-function-type -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.12.0, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=OFF, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, 
+
+    TorchVision: 0.13.0+cu113
+    OpenCV: 4.7.0
+    MMEngine: 0.7.4
+
+Runtime environment:
+    cudnn_benchmark: True
+    mp_cfg: {'mp_start_method': 'fork', 'opencv_num_threads': 0}
+    dist_cfg: {'backend': 'nccl'}
+    seed: 1458103367
+    Distributed launcher: none
+    Distributed training: False
+    GPU number: 1
+------------------------------------------------------------
+
+05/07 12:22:13 - mmengine - INFO - Config:
+norm_cfg = dict(type='SyncBN', requires_grad=True)
+data_preprocessor = dict(
+    type='SegDataPreProcessor',
+    mean=[123.675, 116.28, 103.53],
+    std=[58.395, 57.12, 57.375],
+    bgr_to_rgb=True,
+    pad_val=0,
+    seg_pad_val=255,
+    size=(448, 896))
+model = dict(
+    type='EncoderDecoder',
+    data_preprocessor=dict(
+        type='SegDataPreProcessor',
+        mean=[123.675, 116.28, 103.53],
+        std=[58.395, 57.12, 57.375],
+        bgr_to_rgb=True,
+        pad_val=0,
+        seg_pad_val=255,
+        size=(448, 896)),
+    pretrained=None,
+    backbone=dict(
+        type='UNet',
+        in_channels=3,
+        base_channels=64,
+        num_stages=5,
+        strides=(1, 1, 1, 1, 1),
+        enc_num_convs=(2, 2, 2, 2, 2),
+        dec_num_convs=(2, 2, 2, 2),
+        downsamples=(True, True, True, True),
+        enc_dilations=(1, 1, 1, 1, 1),
+        dec_dilations=(1, 1, 1, 1),
+        with_cp=False,
+        conv_cfg=None,
+        norm_cfg=dict(type='SyncBN', requires_grad=True),
+        act_cfg=dict(type='ReLU'),
+        upsample_cfg=dict(type='InterpConv'),
+        norm_eval=False),
+    decode_head=dict(
+        type='FCNHead',
+        in_channels=64,
+        in_index=4,
+        channels=64,
+        num_convs=1,
+        concat_input=False,
+        dropout_ratio=0.1,
+        num_classes=11,
+        norm_cfg=dict(type='SyncBN', requires_grad=True),
+        align_corners=False,
+        loss_decode=dict(
+            type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0)),
+    auxiliary_head=dict(
+        type='FCNHead',
+        in_channels=128,
+        in_index=3,
+        channels=64,
+        num_convs=1,
+        concat_input=False,
+        dropout_ratio=0.1,
+        num_classes=11,
+        norm_cfg=dict(type='SyncBN', requires_grad=True),
+        align_corners=False,
+        loss_decode=dict(
+            type='CrossEntropyLoss', use_sigmoid=False, loss_weight=0.4)),
+    train_cfg=dict(),
+    test_cfg=dict(mode='slide', crop_size=(256, 256), stride=(170, 170)))
+dataset_type = 'CholecSeg8kTissueDataset'
+data_root = '/nfs/home/talabi/data/cholecseg8k_tissue/'
+img_scale = (540, 960)
+crop_size = (448, 896)
+train_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations'),
+    dict(
+        type='RandomResize',
+        scale=(540, 960),
+        ratio_range=(0.5, 2.0),
+        keep_ratio=True),
+    dict(type='RandomCrop', crop_size=(448, 896), cat_max_ratio=0.75),
+    dict(type='RandomFlip', prob=0.5),
+    dict(type='PhotoMetricDistortion'),
+    dict(type='PackSegInputs')
+]
+test_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(type='Resize', scale=(540, 960), keep_ratio=True),
+    dict(type='LoadAnnotations'),
+    dict(type='PackSegInputs')
+]
+img_ratios = [0.5, 0.75, 1.0, 1.25, 1.5, 1.75]
+tta_pipeline = [
+    dict(type='LoadImageFromFile', backend_args=None),
+    dict(
+        type='TestTimeAug',
+        transforms=[[{
+            'type': 'Resize',
+            'scale_factor': 0.5,
+            'keep_ratio': True
+        }, {
+            'type': 'Resize',
+            'scale_factor': 0.75,
+            'keep_ratio': True
+        }, {
+            'type': 'Resize',
+            'scale_factor': 1.0,
+            'keep_ratio': True
+        }, {
+            'type': 'Resize',
+            'scale_factor': 1.25,
+            'keep_ratio': True
+        }, {
+            'type': 'Resize',
+            'scale_factor': 1.5,
+            'keep_ratio': True
+        }, {
+            'type': 'Resize',
+            'scale_factor': 1.75,
+            'keep_ratio': True
+        }],
+                    [{
+                        'type': 'RandomFlip',
+                        'prob': 0.0,
+                        'direction': 'horizontal'
+                    }, {
+                        'type': 'RandomFlip',
+                        'prob': 1.0,
+                        'direction': 'horizontal'
+                    }], [{
+                        'type': 'LoadAnnotations'
+                    }], [{
+                        'type': 'PackSegInputs'
+                    }]])
+]
+train_dataloader = dict(
+    batch_size=8,
+    num_workers=4,
+    persistent_workers=True,
+    sampler=dict(type='InfiniteSampler', shuffle=True),
+    dataset=dict(
+        type='CholecSeg8kTissueDataset',
+        data_root='/nfs/home/talabi/data/cholecseg8k_tissue/',
+        data_prefix=dict(
+            img_path='train/img_dir', seg_map_path='ann_dir/train'),
+        img_suffix='.png',
+        seg_map_suffix='.png',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='LoadAnnotations'),
+            dict(
+                type='RandomResize',
+                scale=(540, 960),
+                ratio_range=(0.5, 2.0),
+                keep_ratio=True),
+            dict(type='RandomCrop', crop_size=(448, 896), cat_max_ratio=0.75),
+            dict(type='RandomFlip', prob=0.5),
+            dict(type='PhotoMetricDistortion'),
+            dict(type='PackSegInputs')
+        ]))
+val_dataloader = dict(
+    batch_size=1,
+    num_workers=4,
+    persistent_workers=True,
+    sampler=dict(type='DefaultSampler', shuffle=False),
+    dataset=dict(
+        type='CholecSeg8kTissueDataset',
+        data_root='/nfs/home/talabi/data/cholecseg8k_tissue/',
+        data_prefix=dict(img_path='val/img_dir', seg_map_path='val/ann_dir'),
+        img_suffix='.png',
+        seg_map_suffix='.png',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='Resize', scale=(540, 960), keep_ratio=True),
+            dict(type='LoadAnnotations'),
+            dict(type='PackSegInputs')
+        ]))
+test_dataloader = dict(
+    batch_size=1,
+    num_workers=4,
+    persistent_workers=True,
+    sampler=dict(type='DefaultSampler', shuffle=False),
+    dataset=dict(
+        type='CholecSeg8kTissueDataset',
+        data_root='/nfs/home/talabi/data/cholecseg8k_tissue/',
+        data_prefix=dict(img_path='test/img_dir', seg_map_path='test/ann_dir'),
+        img_suffix='.png',
+        seg_map_suffix='.png',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='Resize', scale=(540, 960), keep_ratio=True),
+            dict(type='LoadAnnotations'),
+            dict(type='PackSegInputs')
+        ]))
+val_evaluator = dict(type='IoUMetric', iou_metrics=['mIoU'])
+test_evaluator = dict(type='IoUMetric', iou_metrics=['mIoU'])
+default_scope = 'mmseg'
+env_cfg = dict(
+    cudnn_benchmark=True,
+    mp_cfg=dict(mp_start_method='fork', opencv_num_threads=0),
+    dist_cfg=dict(backend='nccl'))
+vis_backends = [dict(type='LocalVisBackend')]
+visualizer = dict(
+    type='SegLocalVisualizer',
+    vis_backends=[dict(type='LocalVisBackend')],
+    name='visualizer')
+log_processor = dict(by_epoch=False)
+log_level = 'INFO'
+load_from = None
+resume = False
+tta_model = dict(type='SegTTAModel')
+optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0005)
+optim_wrapper = dict(
+    type='OptimWrapper',
+    optimizer=dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0005),
+    clip_grad=None)
+param_scheduler = [
+    dict(
+        type='PolyLR',
+        eta_min=0.0001,
+        power=0.9,
+        begin=0,
+        end=80000,
+        by_epoch=False)
+]
+train_cfg = dict(type='IterBasedTrainLoop', max_iters=80000, val_interval=8000)
+val_cfg = dict(type='ValLoop')
+test_cfg = dict(type='TestLoop')
+default_hooks = dict(
+    timer=dict(type='IterTimerHook'),
+    logger=dict(type='LoggerHook', interval=50, log_metric_by_epoch=False),
+    param_scheduler=dict(type='ParamSchedulerHook'),
+    checkpoint=dict(type='CheckpointHook', by_epoch=False, interval=2000),
+    sampler_seed=dict(type='DistSamplerSeedHook'),
+    visualization=dict(type='SegVisualizationHook', draw=True, interval=50))
+launcher = 'none'
+work_dir = './work_dirs/unet-s5-d16_fcn_4xb4-80k_cholecseg8k_tissue-448x896'
+
+05/07 12:22:19 - mmengine - INFO - Distributed training is not used, all SyncBatchNorm (SyncBN) layers in the model will be automatically reverted to BatchNormXd layers if they are used.
+05/07 12:22:19 - mmengine - INFO - Hooks will be executed in the following order:
+before_run:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+before_train:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+before_train_epoch:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) DistSamplerSeedHook                
+ -------------------- 
+before_train_iter:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+after_train_iter:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) SegVisualizationHook               
+(BELOW_NORMAL) LoggerHook                         
+(LOW         ) ParamSchedulerHook                 
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+after_train_epoch:
+(NORMAL      ) IterTimerHook                      
+(LOW         ) ParamSchedulerHook                 
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+before_val_epoch:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+before_val_iter:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+after_val_iter:
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) SegVisualizationHook               
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_val_epoch:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(BELOW_NORMAL) LoggerHook                         
+(LOW         ) ParamSchedulerHook                 
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+after_train:
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+before_test_epoch:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+before_test_iter:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+after_test_iter:
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) SegVisualizationHook               
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_test_epoch:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_run:
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+/nfs/home/talabi/repositories/mmsegmentation/mmseg/models/builder.py:36: UserWarning: ``build_loss`` would be deprecated soon, please use ``mmseg.registry.MODELS.build()`` 
+  warnings.warn('``build_loss`` would be deprecated soon, please use '
+/nfs/home/talabi/repositories/mmsegmentation/mmseg/models/losses/cross_entropy_loss.py:236: UserWarning: Default ``avg_non_ignore`` is False, if you would like to ignore the certain label and average loss over non-ignore labels, which is the same with PyTorch official cross_entropy, set ``avg_non_ignore=True``.
+  'Default ``avg_non_ignore`` is False, if you would like to '
+05/07 12:22:21 - mmengine - WARNING - The prefix is not set in metric class IoUMetric.
+05/07 12:22:22 - mmengine - WARNING - "FileClient" will be deprecated in future. Please use io functions in https://mmengine.readthedocs.io/en/latest/api/fileio.html#file-io
+05/07 12:22:22 - mmengine - WARNING - "HardDiskBackend" is the alias of "LocalBackend" and the former will be deprecated in future.
+05/07 12:22:22 - mmengine - INFO - Checkpoints will be saved to /nfs/home/talabi/repositories/mmsegmentation/work_dirs/unet-s5-d16_fcn_4xb4-80k_cholecseg8k_tissue-448x896.
+Traceback (most recent call last):
+  File "train_model.py", line 104, in <module>
+    main()
+  File "train_model.py", line 100, in main
+    runner.train()
+  File "/nfs/home/talabi/repositories/mmsegmentation/mmseg/lib/python3.7/site-packages/mmengine/runner/runner.py", line 1721, in train
+    model = self.train_loop.run()  # type: ignore
+  File "/nfs/home/talabi/repositories/mmsegmentation/mmseg/lib/python3.7/site-packages/mmengine/runner/loops.py", line 277, in run
+    data_batch = next(self.dataloader_iterator)
+  File "/nfs/home/talabi/repositories/mmsegmentation/mmseg/lib/python3.7/site-packages/mmengine/runner/loops.py", line 164, in __next__
+    data = next(self._iterator)
+  File "/nfs/home/talabi/repositories/mmsegmentation/mmseg/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 652, in __next__
+    data = self._next_data()
+  File "/nfs/home/talabi/repositories/mmsegmentation/mmseg/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 1347, in _next_data
+    return self._process_data(data)
+  File "/nfs/home/talabi/repositories/mmsegmentation/mmseg/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 1373, in _process_data
+    data.reraise()
+  File "/nfs/home/talabi/repositories/mmsegmentation/mmseg/lib/python3.7/site-packages/torch/_utils.py", line 461, in reraise
+    raise exception
+FileNotFoundError: Caught FileNotFoundError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/nfs/home/talabi/repositories/mmsegmentation/mmseg/lib/python3.7/site-packages/torch/utils/data/_utils/worker.py", line 302, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/nfs/home/talabi/repositories/mmsegmentation/mmseg/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 49, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/nfs/home/talabi/repositories/mmsegmentation/mmseg/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 49, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/nfs/home/talabi/repositories/mmsegmentation/mmseg/lib/python3.7/site-packages/mmengine/dataset/base_dataset.py", line 408, in __getitem__
+    data = self.prepare_data(idx)
+  File "/nfs/home/talabi/repositories/mmsegmentation/mmseg/lib/python3.7/site-packages/mmengine/dataset/base_dataset.py", line 790, in prepare_data
+    return self.pipeline(data_info)
+  File "/nfs/home/talabi/repositories/mmsegmentation/mmseg/lib/python3.7/site-packages/mmengine/dataset/base_dataset.py", line 58, in __call__
+    data = t(data)
+  File "/nfs/home/talabi/repositories/mmsegmentation/mmseg/lib/python3.7/site-packages/mmcv/transforms/base.py", line 12, in __call__
+    return self.transform(results)
+  File "/nfs/home/talabi/repositories/mmsegmentation/mmseg/lib/python3.7/site-packages/mmcv/transforms/loading.py", line 342, in transform
+    self._load_seg_map(results)
+  File "/nfs/home/talabi/repositories/mmsegmentation/mmseg/datasets/transforms/loading.py", line 95, in _load_seg_map
+    results['seg_map_path'], backend_args=self.backend_args)
+  File "/nfs/home/talabi/repositories/mmsegmentation/mmseg/lib/python3.7/site-packages/mmengine/fileio/io.py", line 181, in get
+    return backend.get(filepath)
+  File "/nfs/home/talabi/repositories/mmsegmentation/mmseg/lib/python3.7/site-packages/mmengine/fileio/backends/local_backend.py", line 33, in get
+    with open(filepath, 'rb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/nfs/home/talabi/data/cholecseg8k_tissue/ann_dir/train/VID_35_1152.png'
+
+completed training unet ...

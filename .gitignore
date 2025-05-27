@@ -121,3 +121,5 @@ mmseg/.mim
 
 bin/
 wor_dirs_all_ious/
+
+.circleci/

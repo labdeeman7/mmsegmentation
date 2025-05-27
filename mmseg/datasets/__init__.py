@@ -27,6 +27,7 @@ from .robustmis import RobustmisDataset
 from .syniss_binary import SynissBinaryDataset
 from .syniss_parts import SynissPartsDataset
 from .cholecseg8k_binary import CholecSeg8kBinaryDataset
+from .cholecseg8k_tissue import CholecSeg8kTissueDataset
 # yapf: disable
 from .transforms import (CLAHE, AdjustGamma, BioMedical3DPad,
                          BioMedical3DRandomCrop, BioMedical3DRandomFlip,
@@ -57,5 +58,5 @@ __all__ = [
     'BioMedicalGaussianNoise', 'BioMedicalGaussianBlur',
     'BioMedicalRandomGamma', 'BioMedical3DPad', 'RandomRotFlip',
     'SynapseDataset', 'REFUGEDataset', 'MapillaryDataset_v1',
-    'MapillaryDataset_v2'
+    'MapillaryDataset_v2','CholecSeg8kTissueDataset'
 ]

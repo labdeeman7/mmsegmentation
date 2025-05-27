@@ -13,11 +13,12 @@ pip install mmengine
 pip install -e .
 
 echo "evaluating model ..."
- 
 
-#robustmis
-#segmenter
-python scripts/cholecseg8k/segment.py
 
-echo "completed evaluating on segmenter ..."           
-echo "completed evaluating on deeplab ..."         
+python test_model.py 'configs/unet/unet-s5-d16_fcn_4xb4-80k_cholecseg8k_tissue-448x896.py' \
+        'work_dirs/unet-s5-d16_fcn_4xb4-80k_cholecseg8k_tissue-448x896/iter_72000.pth' \
+        --out 'work_dirs/unet-s5-d16_fcn_4xb4-80k_cholecseg8k_tissue-448x896/pred_labels/' \
+        --show-dir 'work_dirs/unet-s5-d16_fcn_4xb4-80k_cholecseg8k_tissue-448x896/vis_preds/'  
+
+echo "test model done"
+
